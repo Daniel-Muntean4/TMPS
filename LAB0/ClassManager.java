@@ -1,3 +1,5 @@
+package LAB0;
+
 public class ClassManager {
     private InputManager inputManager;
     private Teacher teacher;
@@ -11,7 +13,7 @@ public class ClassManager {
 
     public void startClass() {
         double lessonContent =  (Math.random() * 10);
-        String lesson = lessonContent.toString();
+        String lesson = String.valueOf(lessonContent);
 
         boolean isCool = inputManager.isCoolTeacher();
         if (isCool && teacher instanceof CoolTeacher) {

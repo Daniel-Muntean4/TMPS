@@ -1,4 +1,6 @@
-public class Student implements IListenLesson, IReplyQuestion, IAskQuestions{
+package LAB0;
+
+public class Student implements IListenLesson, IReplyQuestion, IAskQuestions {
 
     @Override
     public String askQuestion() {

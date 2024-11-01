@@ -1,4 +1,6 @@
-public class Teacher implements ITeach, IAskQuestions, IReplyQuestion{
+package LAB0;
+
+public class Teacher implements ITeach, IAskQuestions, IReplyQuestion {
     @Override
     public String askQuestion() {
         return "a;";

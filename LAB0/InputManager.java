@@ -1,3 +1,5 @@
+package LAB0;
+
 import java.util.Scanner;
 
 class InputManager {
@@ -13,7 +15,7 @@ class InputManager {
     }
 
     public String getQuestion() {
-        System.out.println("Who has a question? (Student or Teacher or None)");
+        System.out.println("Who has a question? (LAB0.Student or LAB0.Teacher or None)");
         scanner.nextLine(); // Consume leftover newline
         return scanner.nextLine().toLowerCase();
     }
