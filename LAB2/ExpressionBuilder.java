@@ -1,7 +1,7 @@
-package LAB1.client;
-
+package LAB2;
+ /* proxy and adapter (flyweight)*/
 class ExpressionBuilder {
-    private double result;
+    public double result;
     private boolean isFirstOperation = true;
 
     public ExpressionBuilder add(double value) {
@@ -48,6 +48,7 @@ class ExpressionBuilder {
     }
 
     public double build() {
+        result = Double.parseDouble(String.valueOf(result));
         return result;
     }
 }

@@ -1,6 +1,5 @@
-package LAB1.client;
+package LAB2;
 
-// Operation interface
 interface Operation {
     double calculate(double a, double b);
 }

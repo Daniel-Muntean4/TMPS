@@ -1,4 +1,4 @@
-package LAB1.client;
+package LAB2;
 
 abstract class Calculator {
     protected abstract Operation createOperation(String operator);
@@ -19,4 +19,7 @@ abstract class Calculator {
         }
         return instance;
     }
+
+
+    public abstract double[] solveQuadratic(double a, double b, double c);
 }
