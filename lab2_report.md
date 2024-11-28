@@ -1,7 +1,7 @@
 # Creational Design Patterns
 
 
-## Author: Vasile Drumea
+## Author: Daniel Muntean
 
 ----
 
