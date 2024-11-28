@@ -42,13 +42,7 @@
             default -> null;
         };
     }
-public interface Flyweight {
-    double execute(double a, double b);
 
-    default String toScientific(double value) {
-        return String.format("%e", value);
-    }
-}
 
 ```
 ```
@@ -88,7 +82,7 @@ public class CalculatorProxy extends Calculator {
 }
 
 ```
-* Calculator proxy with a quadratic equation solver, that would call usually a solveQuadratic() function that is part of a library. In this case it is in a separate class created for the purpose of having a proxy.
+* Calculator proxy with a quadratic equation solver, that would call usually a solveQuadratic() function that is part of a library. In this case it is in a separate class created for the purpose of having a proxy. The calc object of the class ConcreteOpration does the calculations themselves(operation or formulas).
 
 
 ## Conclusions / Screenshots / Results
