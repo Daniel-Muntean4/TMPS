@@ -11,8 +11,8 @@
 ## Objectives:
 
 * Get familiar with the Structural DPs;
-* Choose a specific domain;
-* Implement at least 3 CDPs for the specific domain;
+* As a continuation of the previous laboratory work, think about the functionalities that your system will need to provide to the user.;
+* Implement some additional functionalities using structural design patterns;
 
 
 ## Used Design Patterns: 
