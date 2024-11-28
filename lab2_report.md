@@ -89,3 +89,5 @@ public class CalculatorProxy extends Calculator {
 
 
 ## Conclusions / Screenshots / Results
+* In conclusion we have new features done with structural patterns, such as having scientific notation, scientific calculator and a quadratic equation solver. Is possible t
+o be improved by solving more complex equations.
