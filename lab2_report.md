@@ -45,6 +45,8 @@
 
 
 ```
+* This is the flyweight interface. It separates the two main methods being execute()(for calculations) and then passing result to scientific notation toScientific()
+
 ```
 
 
@@ -57,7 +59,7 @@ public interface Flyweight {
 }
 
 ```
-* This is the flyweight interface. It separates the two main methods being execute()(for calculations) and then passing result to scientific notation toScientific()
+* Calculator proxy with a quadratic equation solver, that would call usually a solveQuadratic() function that is part of a library. In this case it is in a separate class created for the purpose of having a proxy. The calc object of the class ConcreteOpration does the calculations themselves(operation or formulas).
  ```
 
 
@@ -82,7 +84,7 @@ public class CalculatorProxy extends Calculator {
 }
 
 ```
-* Calculator proxy with a quadratic equation solver, that would call usually a solveQuadratic() function that is part of a library. In this case it is in a separate class created for the purpose of having a proxy. The calc object of the class ConcreteOpration does the calculations themselves(operation or formulas).
+
 
 
 ## Conclusions / Screenshots / Results
