@@ -2,6 +2,9 @@
 
 
 ## Author: Daniel Muntean
+## Group: FAF-221
+
+
 
 ----
 
@@ -14,9 +17,9 @@
 
 ## Used Design Patterns: 
 
-* Proxy
-* Flyweight: a structural design pattern that lets you fit more objects into the available amount of RAM by sharing common parts of state between multiple objects instead of keeping all of the data in each object.
-* Adapter
+* Proxy: a structural design pattern that lets you provide a substitute or placeholder for another object. A proxy controls access to the original object, allowing you to perform something either before or after the request gets through to the original object.
+* Flyweight: a pattern that lets you fit more objects into the available amount of RAM by sharing common parts of state between multiple objects instead of keeping all of the data in each object.
+* Adapter: a pattern that allows objects with incompatible interfaces to collaborate
 
 
 ## Implementation
@@ -25,7 +28,7 @@
   
 
 
-* This is a an adapter, for the scientific complex expressions using lambda functions.
+* This is a an adapter, for the scientific complex expressions using lambda functions. It gets the string inpput and uses the methods for calculating the scientific expressions, from the class ScientificCalculator
 
 ```
 
@@ -60,7 +63,7 @@ public interface Flyweight {
 }
 
 ```
-* This is the flyweight interface.
+* This is the flyweight interface. It separates the two main methods being execute()(for calculations) and then passing result to scientific notation toScientific()
  ```
 
 
@@ -85,7 +88,7 @@ public class CalculatorProxy extends Calculator {
 }
 
 ```
-* Calculator proxy with a quadratic equation solver
+* Calculator proxy with a quadratic equation solver, that would call usually a solveQuadratic() function that is part of a library. In this case it is in a separate class created for the purpose of having a proxy.
 
 
 ## Conclusions / Screenshots / Results
