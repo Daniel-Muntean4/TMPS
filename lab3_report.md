@@ -1,53 +1,94 @@
-# Topic: *Creational Design Patterns*
-## Author: *Drumea Vasile*
-------
+# Creational Design Patterns
+
+
+## Author: Daniel Muntean
+## Group: FAF-221
+
+
+
+----
+
 ## Objectives:
-__1. Study and understand the Creational Design Patterns.__
 
-__2. Choose a domain, define its main classes/models/entities and choose the appropriate instantiation mechanisms.__
+* Study and understand the Behavioural Design Patterns;
+* As a continuation of the previous laboratory work, think about the functionalities that your system will need to provide to the user..;
+* Implement some additional functionalities using behavioral design patterns.;
 
-__3. Use some creational design patterns for object instantiation in a sample project.__
 
-## Some Theory:
-In software engineering, the creational design patterns are the general solutions that deal with object creation, trying to create objects in a manner suitable to the situation. The basic form of object creation could result in design problems or added complexity to the design. Creational design patterns solve this problem by optimizing, hiding or controlling the object creation.
+## Used Design Patterns: 
 
-Some examples of this kind of design patterns are:
+* Iterator: a structural design pattern that lets you provide a substitute or placeholder for another object. A proxy controls access to the original object, allowing you to perform something either before or after the request gets through to the original object.
+* Memento: a pattern that lets you fit more objects into the available amount of RAM by sharing common parts of state between multiple objects instead of keeping all of the data in each object.
+* Visitor: a pattern that allows objects with incompatible interfaces to collaborate
 
-   * Singleton
-   * Builder
-   * Prototype
-   * Object Pooling
-   * Factory Method
-   * Abstract Factory
-   
-## Main tasks:
-__1. Choose an OO programming language and a suitable IDE or Editor (No frameworks/libs/engines allowed).__
 
-__2. Select a domain area for the sample project.__
+## Implementation
 
-__3. Define the main involved classes and think about what instantiation mechanisms are needed.__
+* Adding thre structural design patterns to the previous laboratory with creational design patterns, the adapter was used to adapt the string input to the function that makes the comlplex operation in our calculator. Then we used a flyweight to create a more performant way of doing complex operations, also having the option of having scientifiic notation. To conclude I used a Proxy for accessing a quadratic equation function in a safe way, that could be in a separate library. Creating a calculator proxy class and a function in main 
+  
 
-__4. Based on the previous point, implement atleast 3 creational design patterns in your project.__
 
-## Evaluation:
-__1. The project should be located in a repository on a git hosting service (e.g. Github, Gitlab, BitBucket etc.):__
+* This is a an adapter, for the scientific complex expressions using lambda functions. It gets the string inpput and uses the methods for calculating the scientific expressions, from the class ScientificCalculator
 
-  * You only need to have one project
-  * You can have separate modules that depend on each other
-  * You should separate the project into modules / packages based on the responsibilities:
-    * client
-    * domain
-      * factory
-      * models
+```
 
-__2. It should contain an explanation in the form of a README file or a LaTeX report with the standard structure from the TEMPLATE.md file.__
+    @Override
+    protected Operation createOperation(String operator) {
+        return switch (operator) {
+            case "sin" -> (a, b) -> scientificCalculator.calculateSin(a);
+            case "cos" -> (a, b) -> scientificCalculator.calculateCos(a);
+            case "^" -> (a,b) -> scientificCalculator.calculatePower(a, b);
+            case "sqrt" -> (a, b) -> scientificCalculator.calculateRoot(a);
+            default -> null;
+        };
+    }
 
-__3. In order to make the evaluation as optimal as possible we will have a quiz on this topic.__
 
-__4. The mark of the lab is based on the project and the quiz.__
+```
+* This is the flyweight interface. It separates the two main methods being execute()(for calculations) and then passing result to scientific notation toScientific()
 
-__5. Submit the repository URL on ELSE.__
+```
 
-__7. The deadline for this assignment is 03/10/2021.__
 
-__8. After the deadline for each weak the max grade decreases by 1.__
+public interface Flyweight {
+    double execute(double a, double b);
+
+    default String toScientific(double value) {
+        return String.format("%e", value);
+    }
+}
+
+```
+* Calculator proxy with a quadratic equation solver, that would call usually a solveQuadratic() function that is part of a library. In this case it is in a separate class created for the purpose of having a proxy. The calc object of the class ConcreteOpration does the calculations themselves(operation or formulas).
+ ```
+
+
+
+public class CalculatorProxy extends Calculator {
+    ConcreteCalculator calc = new ConcreteCalculator();
+
+    @Override
+    protected Operation createOperation(String operator) {
+        return null;
+    }
+
+    @Override
+    public double performOperation(double a, double b, String operator) {
+        return calc.performOperation(a, b, operator);
+    }
+
+    @Override
+    public double[] solveQuadratic(double a, double b, double c) {
+        return calc.solveQuadratic(a, b, c);
+    }
+}
+
+```
+
+
+
+## Conclusions / Screenshots / Results
+* In conclusion we have new features done with structural patterns, such as having scientific notation, scientific calculator and a quadratic equation solver. Is possible t
+o be improved by solving more complex equations.
+
+![image](https://github.com/user-attachments/assets/4f557e37-de58-453c-8236-c916789f9ed1)
