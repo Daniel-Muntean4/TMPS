@@ -23,4 +23,4 @@ This program simulates a classroom interaction using OOP principles like encapsu
 
 The program emphasizes dependency injection, making it testable and maintainable. It also uses casting (CoolTeacher) and conditional logic to ensure that specialized behavior (like telling jokes) is only executed when appropriate.
 
-To make the simulation more dynamic, you could enhance the InputManager to accept real user input or implement more complex interactions between teachers and students.
+
