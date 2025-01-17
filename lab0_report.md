@@ -1,5 +1,5 @@
 # Topic: *Creational Design Patterns*
-## Author: *Daniel Muntean*
+## Author: *Daniel Muntean* *FAF 221*
 ------
 ## Objectives:
 __1. Study and understand the SOLID principles .__
