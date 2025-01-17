@@ -17,78 +17,101 @@
 
 ## Used Design Patterns: 
 
-* Iterator: a structural design pattern that lets you provide a substitute or placeholder for another object. A proxy controls access to the original object, allowing you to perform something either before or after the request gets through to the original object.
-* Memento: a pattern that lets you fit more objects into the available amount of RAM by sharing common parts of state between multiple objects instead of keeping all of the data in each object.
-* Visitor: a pattern that allows objects with incompatible interfaces to collaborate
+* VISITOR: a behavioral design pattern that lets you define a new operation without changing classes of the element on which operates. 
 
 
 ## Implementation
 
-* Adding thre structural design patterns to the previous laboratory with creational design patterns, the adapter was used to adapt the string input to the function that makes the comlplex operation in our calculator. Then we used a flyweight to create a more performant way of doing complex operations, also having the option of having scientifiic notation. To conclude I used a Proxy for accessing a quadratic equation function in a safe way, that could be in a separate library. Creating a calculator proxy class and a function in main 
-  
+* Adding the visitor pattern allowed the calculator I'm creating to have 5th, 4th and 3rd degree equations. They are different ways of interpreting the input.
+* Third degree uses Cardano's formula, quartic equations use Ferrari's returning real roots onlyand for 5ht degree uses the Newton-Raphson method for numerical approximation.
 
 
-* This is a an adapter, for the scientific complex expressions using lambda functions. It gets the string inpput and uses the methods for calculating the scientific expressions, from the class ScientificCalculator
+* This is the visitor interface
 
 ```
+    public interface Visitor {
+    void visitCubic();
+    void visitPowerFour();
+    void visitPowerFive();
+}
+
+```
+* This is the polynomial solver concrete visitor
+
+```
+public class PolynomialSolverVisitor implements Visitor {
+    private double[] result;
 
     @Override
-    protected Operation createOperation(String operator) {
-        return switch (operator) {
-            case "sin" -> (a, b) -> scientificCalculator.calculateSin(a);
-            case "cos" -> (a, b) -> scientificCalculator.calculateCos(a);
-            case "^" -> (a,b) -> scientificCalculator.calculatePower(a, b);
-            case "sqrt" -> (a, b) -> scientificCalculator.calculateRoot(a);
-            default -> null;
-        };
+    public void visitCubic() {
+        System.out.println("Solving cubic equation using Cardano's formula...");
     }
 
+    @Override
+    public void visitPowerFour() {
+        System.out.println("Solving 4th degree equation using Ferrari's method...");
+    }
 
-```
-* This is the flyweight interface. It separates the two main methods being execute()(for calculations) and then passing result to scientific notation toScientific()
+    @Override
+    public void visitPowerFive() {
+        System.out.println("Solving 5th degree equation using Newton-Raphson method...");
+    }
 
-```
-
-
-public interface Flyweight {
-    double execute(double a, double b);
-
-    default String toScientific(double value) {
-        return String.format("%e", value);
+    public double[] getResult() {
+        return result;
     }
 }
 
 ```
-* Calculator proxy with a quadratic equation solver, that would call usually a solveQuadratic() function that is part of a library. In this case it is in a separate class created for the purpose of having a proxy. The calc object of the class ConcreteOpration does the calculations themselves(operation or formulas).
+* This is the element interface, has the method to accept and solve(which is shared by all concrete elements) 
  ```
 
-
-
-public class CalculatorProxy extends Calculator {
-    ConcreteCalculator calc = new ConcreteCalculator();
-
-    @Override
-    protected Operation createOperation(String operator) {
-        return null;
-    }
-
-    @Override
-    public double performOperation(double a, double b, String operator) {
-        return calc.performOperation(a, b, operator);
-    }
-
-    @Override
-    public double[] solveQuadratic(double a, double b, double c) {
-        return calc.solveQuadratic(a, b, c);
-    }
+public interface Equation {
+    void accept(Visitor visitor);
+    double[] solve();
 }
 
 ```
+*  Finally we have an example of a concrete element for solving quartic equations which accepts the visitor visitPowerFour (the example is simplified for mantaining brevity the full one is in the code)
+  ```
+public class PowerFourEquation implements Equation {
+    private double a, b, c, d, e;
+
+    public PowerFourEquation(double a, double b, double c, double d, double e) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
+        this.d = d;
+        this.e = e;
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitPowerFour();
+    }
+
+    @Override
+    public double[] solve() {
+        // Ferrari's method for quartic equations
+        // First, normalize the equation (make coefficient of x⁴ equal to 1)
+        // Calculate coefficients of resolvent cubic equation
+        // Solve resolvent cubic equation
+        // Calculate coefficients for quadratic factors
+        // Solve two quadratic equations
+        // First quadratic: x² + (p/2 + R)x + E = 0
+        // Second quadratic: x² + (p/2 - R)x + F = 0
+        // Return only the found real roots
+        
+    }
+}
+```
+
 
 
 
 ## Conclusions / Screenshots / Results
-* In conclusion we have new features done with structural patterns, such as having scientific notation, scientific calculator and a quadratic equation solver. Is possible t
-o be improved by solving more complex equations.
+* In conclusion behavioral patterns are about communication and assignment of responsability between objects. The visitor pattern permitted to have 3,4 5th degree equations mantaining open/ close and single responsability principles of SOLID.
 
-![image](https://github.com/user-attachments/assets/4f557e37-de58-453c-8236-c916789f9ed1)
+
+<img width="471" alt="Captura de pantalla 2025-01-17 a las 17 16 10" src="https://github.com/user-attachments/assets/2357a012-c0e9-4b60-aa19-d3fcab244401" />
+
