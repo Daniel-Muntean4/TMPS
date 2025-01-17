@@ -114,4 +114,3 @@ public class PowerFourEquation implements Equation {
 
 
 <img width="471" alt="Captura de pantalla 2025-01-17 a las 17 16 10" src="https://github.com/user-attachments/assets/2357a012-c0e9-4b60-aa19-d3fcab244401" />
-
