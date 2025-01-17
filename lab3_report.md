@@ -112,5 +112,5 @@ public class PowerFourEquation implements Equation {
 ## Conclusions / Screenshots / Results
 * In conclusion behavioral patterns are about communication and assignment of responsability between objects. The visitor pattern permitted to have 3,4 5th degree equations mantaining open/ close and single responsability principles of SOLID.
 
+<img width="435" alt="Captura de pantalla 2025-01-17 a las 17 18 56" src="https://github.com/user-attachments/assets/dc6dae03-d233-4596-bd70-44918ae35d08" />
 
-<img width="471" alt="Captura de pantalla 2025-01-17 a las 17 16 10" src="https://github.com/user-attachments/assets/2357a012-c0e9-4b60-aa19-d3fcab244401" />
