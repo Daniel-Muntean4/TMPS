@@ -1,5 +1,5 @@
 # Topic: *Creational Design Patterns*
-## Author: *Drumea Vasile*
+## Author: *Daniel Muntean*
 ------
 ## Objectives:
 __1. Study and understand the SOLID principles .__
