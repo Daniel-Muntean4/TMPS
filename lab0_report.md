@@ -6,11 +6,11 @@ __1. Study and understand the SOLID principles .__
 
 ## Some Theory:
 The SOLID principles are five essential guidelines that enhance software design, making code more maintainable and scalable. They include Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion. 
-Single Responsability: A class should have one and only one reason to change, meaning that a class should have only one job.
-Open-closed: Each object or entity should be open for extension but closed for modification.
-Liskov-Substitution: The derived class should be able to be substituted by it's base class
-Interface segregation: each interface should do only one thing, because the client should not implement methods it does not use. And each client should not implement interfaces that are not used.
-Dependency inversion: High level modules should not depend on lower level modules, but should depend on abstrations
+__Single Responsability: A class should have one and only one reason to change, meaning that a class should have only one job.__
+__Open-closed: Each object or entity should be open for extension but closed for modification.__
+__Liskov-Substitution: The derived class should be able to be substituted by it's base class.__
+__Interface segregation: each interface should do only one thing, because the client should not implement methods it does not use. And each client should not implement interfaces that are not used.__
+__Dependency inversion: High level modules should not depend on lower level modules, but should depend on abstrations.__
 
 
 ## Solid Principles implemented
