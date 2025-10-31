@@ -11,8 +11,7 @@ The creational design patterns are concerned with the creation of objects increa
 __1. Singleton:__ restrict object creation to one instance.  
 __2. Factory Method:__ creates object without specifying the exact class to create.  
 __3. Abstract Factory:__ groups objects factories with a common theme. Used when: system should be idependent of how his products are created.  
-__4. Builder:__ constructing complex object by separating construction and representation. 
-Used when: algorithm fo creating complex object should be idependent of the parts that make up the object and how they're assembled 
+__4. Builder:__ constructing complex object by separating construction and representation. Used when: algorithm fo creating complex object should be idependent of the parts that make up the object and how they're assembled 
 and the construction process must allow different representation of the objects that are constructed
 __5. Prototype:__ creates clones by copying an existing object.
 __6. Object pool:__ used when when cost of inititialization a class instance is high, rate of instanciation is high and the number of instanciations at a time is low.
@@ -123,7 +122,7 @@ public class TaskCounter {
     }
 ```
 Lastly our project has the **Singleton**, with eager initialization, we create the object at class creation, not when we need it, 
-because we will always use the counter in our program, and we have only one instance, because we will not have never more than one user.
+because we will always use the counter in our program, and we have only one instance, because we will never have more than one user. The getinstance() method is static because it can have only one instance, and is not initialized with new. We can't create two different objects because of this. Also there is a pending and completed counts that counts the task completion or incompletion.
 
 ## Implementation
 This program allows a user to create tasks and to describe them, the tasks are set with the current user date, allowing to have different formats using Factory Method, also the user can see how many tasks he completed in total. 
