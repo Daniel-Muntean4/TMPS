@@ -2,18 +2,18 @@
 ## Author: *Daniel Muntean* *FAF 232*
 ------
 ## Objectives:
-__1. Study and understand the Creational Design Patterns .__
-__2. Choose a domain, define its main classes/models/entities and choose the appropriate instantiation mechanisms .__
-__3. Use some creational design patterns for object instantiation in a sample project .__
+__ 1. Study and understand the Creational Design Patterns .__
+__ 2. Choose a domain, define its main classes/models/entities and choose the appropriate instantiation mechanisms .__
+__ 3. Use some creational design patterns for object instantiation in a sample project .__
 
 ## Some Theory:
 The creational design patterns are concerned with the creation of objects increasing reuse of code and help adhering to SOLID principles.
-__1. Singleton:__ restrict object creation to one instance.  
-__2. Factory Method:__ creates object without specifying the exact class to create.  
-__3. Abstract Factory:__ groups objects factories with a common theme. Used when: system should be idependent of how his products are created.  
-__4. Builder:__ constructing complex object by separating construction and representation. Used when: algorithm fo creating complex object should be idependent of the parts that make up the object and how they're assembled and the construction process must allow different representation of the objects that are constructed.
-__5. Prototype:__ creates clones by copying an existing object.
-__6. Object pool:__ used when when cost of inititialization a class instance is high, rate of instanciation is high and the number of instanciations at a time is low.
+__ 1. Singleton:__ restrict object creation to one instance.  
+__ 2. Factory Method:__ creates object without specifying the exact class to create.  
+__ 3. Abstract Factory:__ groups objects factories with a common theme. Used when: system should be idependent of how his products are created.  
+__ 4. Builder:__ constructing complex object by separating construction and representation. Used when: algorithm fo creating complex object should be idependent of the parts that make up the object and how they're assembled and the construction process must allow different representation of the objects that are constructed.
+__ 5. Prototype:__ creates clones by copying an existing object.
+__ 6. Object pool:__ used when when cost of inititialization a class instance is high, rate of instanciation is high and the number of instanciations at a time is low.
 
 
 ## Creational Design Patterns implemented
