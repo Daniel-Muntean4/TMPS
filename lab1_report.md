@@ -8,7 +8,7 @@ __3. Use some creational design patterns for object instantiation in a sample pr
 
 ## Some Theory:
 The creational design patterns are concerned with the creation of objects increasing reuse of code and help adhering to SOLID principles.
-__1 .Singleton:__ restrict object creation to one instance.  
+__1.Singleton:__ restrict object creation to one instance.  
 __2. Factory Method:__ creates object without specifying the exact class to create.  
 __3. Abstract Factory:__ groups objects factories with a common theme. Used when: system should be idependent of how his products are created.  
 __4. Builder:__ constructing complex object by separating construction and representation. Used when: algorithm fo creating complex object should be idependent of the parts that make up the object and how they're assembled and the construction process must allow different representation of the objects that are constructed.  
