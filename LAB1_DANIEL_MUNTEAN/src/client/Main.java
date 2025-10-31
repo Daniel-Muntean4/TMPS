@@ -36,11 +36,12 @@ public class Main {
             String input = scanner.nextLine();
             if(!input.isBlank()){
             taskBuilder.setFinished(); 
-            taskCounter.getCompletedCount();
+            taskCounter.substractPendingTask();
         }
             Object task = taskBuilder.build();
             System.out.println("");
             System.out.println(task);
+            System.out.println("Completed tasks: "+taskCounter.getCompletedCount()+". Uncompleted tasks: "+taskCounter.getPendingCount());
             System.out.println("Continue doing new tasks?(y/n)");
             String newTask = scanner.nextLine();
             if (!newTask.equals("y")){
