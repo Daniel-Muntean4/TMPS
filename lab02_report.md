@@ -62,7 +62,7 @@ public class Paragraph implements IDocumentElement{
 ```
 This Paragraph class is our composite pattern *leaf*, we can get the content and of it with and without spaces, depending on the use we will have 
 ```
-        public String getName(){
+    public String getName(){
         return this.name;
     }
     public void add(IDocumentElement docElement){
