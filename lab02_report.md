@@ -146,5 +146,4 @@ Lastly we have the DocumentOperationManager which serves as Facade, it has three
 ## Conclusion
 This program has the functionality of creating notes by adding new sections with paragraphs of text. Once finished the notes can be exported in three different formats: ASCII, Markdown or Plain text according to user preferences.  
 ## Screenshots
-<img width="1088" height="472" alt="image" src="https://github.com/user-attachments/assets/b5e7fa11-a72e-4727-8006-7a94a0049352" />
-
+<img width="725" height="315" alt="image" src="https://github.com/user-attachments/assets/b5e7fa11-a72e-4727-8006-7a94a0049352" />
